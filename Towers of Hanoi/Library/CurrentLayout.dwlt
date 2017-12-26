@@ -111,7 +111,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 442}
   m_MaxSize: {x: 22012, y: 10021}
   vertical: 0
-  controlID: 1542
+  controlID: 128
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 1418
+  controlID: 26
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -179,8 +179,8 @@ MonoBehaviour:
     y: 388
     width: 590
     height: 367
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 12}
   m_Panes:
   - {fileID: 12}
@@ -227,7 +227,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 794
     y: 0
-    width: 435
+    width: 300
     height: 755
   m_MinSize: {x: 234, y: 271}
   m_MaxSize: {x: 10004, y: 10021}
@@ -250,9 +250,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 1229
+    x: 1094
     y: 0
-    width: 291
+    width: 426
     height: 755
   m_MinSize: {x: 277, y: 71}
   m_MaxSize: {x: 4002, y: 4021}
@@ -364,14 +364,14 @@ MonoBehaviour:
     width: 588
     height: 367
   m_SceneLighting: 1
-  lastFramingTime: 2660.64505390033
+  lastFramingTime: 10011.678706552533
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.053912, y: 1.0535979, z: 0.068003714}
+    m_Target: {x: -6.8826184, y: -8.571888, z: -0.1675874}
     speed: 2
-    m_Value: {x: -4.053912, y: 1.0535979, z: 0.068003714}
+    m_Value: {x: -6.8826184, y: -8.571888, z: -0.1675874}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -398,9 +398,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.8735259
+    m_Target: 19.603102
     speed: 2
-    m_Value: 3.8735259
+    m_Value: 19.603102
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -442,7 +442,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ea5cfeffa65dfeffd85efeff04ddffffc0ddfffff0deffff84fbffff00000000e62a0000fa2a0000002b0000562b0000822b0000
+    m_ExpandedIDs: d6d1ffff8cd2ffffbcd3ffff9afbffff00000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -489,7 +489,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 804
     y: 100
-    width: 431
+    width: 296
     height: 734
   m_SearchFilter:
     m_NameFilter: 
@@ -507,15 +507,15 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts
+  - Assets/Scripts/Common
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: D:\Projects\Unity\ToH\Towers of Hanoi
+  m_LastProjectPath: D:\Projects\Unity\ToH\ToHGitrepo\Towers of Hanoi
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: b8270000
-    m_LastClickedID: 10168
-    m_ExpandedIDs: 0000000086270000b827000000ca9a3bffffff7f
+    m_SelectedIDs: ba270000
+    m_LastClickedID: 10170
+    m_ExpandedIDs: 0000000088270000ba27000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -543,7 +543,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000086270000b827000000ca9a3bffffff7f
+    m_ExpandedIDs: 0000000088270000ba270000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -620,9 +620,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1239
+    x: 1104
     y: 100
-    width: 289
+    width: 424
     height: 734
   m_ScrollPosition: {x: 0, y: 0}
   m_InspectorMode: 0

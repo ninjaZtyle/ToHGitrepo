@@ -10,14 +10,22 @@ using TowersOfHanoi;
 //passes information between the model and view components, and handles the UI text
 public class GameController : MonoBehaviour {
 
+	public static GameController instance;		//static reference as part of a singleton pattern
 
-	public Game game = new Game (); 					//create an instance of the abstract game "model" class
-	public GameObject marker;							// visual indicator of the current active ring
+	public Game game = new Game (); 					//create an instance of the abstract "model" class Game
 	public Text gameText;								// displays messages to the player
 	public Pin[] pins { get; private set;} 				//reference to the pins
 
 	// Use this for initialization
 	void Start () {
+
+		if(instance == null){							//simple singleton pattern
+			instance = this;							//checks if instance already exists
+		} else if(instance != this){					//sets it if it does not,
+			Destroy (gameObject);						//destroy it if it does
+		}
+
+
 
 		gameText.enabled = false;						//hide text on startup
 		pins = GetComponentsInChildren<Pin> ();			//get all pins in an array
@@ -58,9 +66,6 @@ public class GameController : MonoBehaviour {
 
 		//selects the ring to make it draggable
 		game.setActiveRing (ring);
-
-		//displays a visual indicator on the active ring
-		setMarker (ring);
 	}
 
 
@@ -84,9 +89,9 @@ public class GameController : MonoBehaviour {
 			ring.transform.position = ring.lastPos;
 		}
 
-		//resets the active ring and its visual indicator
+		//resets the active ring
 		game.setActiveRing (null);
-		setMarker (null);
+
 
 		//if the ring was placed on a pin, a check for win is made. if winconditions are completed a message will be displayed
 		if (game.activePin) {
@@ -94,24 +99,6 @@ public class GameController : MonoBehaviour {
 				game.resetGame (pins);
 				setGameText ("Game won!");
 			}
-		}
-	}
-
-
-		/// <summary>
-		/// Sets the visual indicator of the active ring.
-		/// </summary>
-		/// <param name="ring">Ring.</param>
-	public void setMarker(Ring ring){
-		if(ring == null){
-			marker.SetActive (false);
-			return;
-		}
-
-		else{
-			marker.SetActive (true);
-			marker.transform.SetParent (ring.transform);
-			marker.transform.position = marker.transform.parent.position;
 		}
 	}
 
@@ -125,10 +112,20 @@ public class GameController : MonoBehaviour {
 		gameText.enabled = true;
 	}
 
+
+		/// <summary>
+		/// Sets the active pin.
+		/// </summary>
+		/// <param name="pin">Pin.</param>
 	public void setActivePin(Pin pin){
 		game.setActivePin (pin);
 	}
 
+
+		/// <summary>
+		/// Gets the active ring.
+		/// </summary>
+		/// <returns>The active ring.</returns>
 	public Ring getActiveRing(){
 		return game.activeRing;
 	}

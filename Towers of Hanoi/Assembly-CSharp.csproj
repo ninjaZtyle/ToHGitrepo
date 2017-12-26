@@ -51,25 +51,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Common\NotificationCenter\NotificationCenter.cs" />
-     <Compile Include="Assets\Scripts\Common\NotificationCenter\NotificationExtensions.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\GameObjectPoolController.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolable.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\PoolData.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\BasePooler.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\IndexedPooler.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\IntKeyedPooler.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\KeyedPooler.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\SetPooler.cs" />
-     <Compile Include="Assets\Scripts\Common\Pooling\Poolers\StringKeyedPooler.cs" />
-     <Compile Include="Assets\Scripts\Common\StateMachine\State.cs" />
-     <Compile Include="Assets\Scripts\Common\StateMachine\StateMachine.cs" />
      <Compile Include="Assets\Scripts\Controller\GameController.cs" />
      <Compile Include="Assets\Scripts\Model\Game.cs" />
      <Compile Include="Assets\Scripts\View\Pin.cs" />
      <Compile Include="Assets\Scripts\View\Ring.cs" />
  <Reference Include="Facebook.Unity.Settings">
- <HintPath>D:/Projects/Unity/ToH/Towers of Hanoi/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+ <HintPath>D:/Projects/Unity/ToH/ToHGitrepo/Towers of Hanoi/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

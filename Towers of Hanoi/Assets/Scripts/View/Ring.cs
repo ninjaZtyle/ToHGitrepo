@@ -18,21 +18,18 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 	public Vector3 pinPos{ get; private set;} 	//pinPos is used to align rings to the pins
 	public bool onPin { get; private set;} 		//is the ring on a pin or floating freely
 
-	private GameController gc;
 	private Rigidbody2D rb;
 
 
 	void Start(){
 		//setting up references
-		if (gc == null) {
-			gc = GetComponentInParent <GameController> ();
-		}
 		if (rb == null) {
 			rb = GetComponent<Rigidbody2D> ();
 		}
 
 		//set pinPosition to that of starting pin
 		pinPos = transform.parent.position;
+
 
 		//set lastPosition to current pos
 		lastPos = transform.position;
@@ -59,7 +56,7 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 		if (GetComponentInParent<Pin> ().getTopRing () == this) {
 			lastPos = transform.position;
 			rb.bodyType = RigidbodyType2D.Dynamic;
-			gc.RingIsPressed (this);
+			GameController.instance.RingIsPressed (this);
 		}
 
 	}
@@ -71,7 +68,7 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 		/// </summary>
 		/// <param name="eventData">Event data.</param>
 	void IPointerUpHandler.OnPointerUp(PointerEventData eventData){
-			gc.RingIsReleased (this);
+		GameController.instance.RingIsReleased (this);
 	}
 
 
@@ -81,7 +78,7 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 		/// <param name="other">Other.</param>
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Pin"){
-			gc.setActivePin (other.GetComponent<Pin> ());
+			GameController.instance.setActivePin (other.GetComponent<Pin> ());
 			pinPos = other.transform.position;
 			onPin = true;
 		}
@@ -94,7 +91,7 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 		/// <param name="other">Other.</param>
 	void OnTriggerExit2D(Collider2D other){
 		if(other.tag == "Pin"){
-			gc.setActivePin(null);
+			GameController.instance.setActivePin(null);
 			onPin = false;
 		}
 	}
@@ -105,7 +102,7 @@ public class Ring : MonoBehaviour, IPointerDownHandler, IPointerUpHandler {
 		/// </summary>
 		/// <param name="other">Other.</param>
 	void OnCollisionEnter2D (Collision2D other){
-		if ((other.gameObject.tag== "Ring" || other.gameObject.tag== "Plate") && gc.getActiveRing() != this){
+		if ((other.gameObject.tag== "Ring" || other.gameObject.tag== "Plate") && GameController.instance.getActiveRing() != this){
 			rb.bodyType = RigidbodyType2D.Static;
 		}
 	}
